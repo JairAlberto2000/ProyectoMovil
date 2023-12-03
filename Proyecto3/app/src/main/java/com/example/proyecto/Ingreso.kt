@@ -36,7 +36,7 @@ class Ingreso : AppCompatActivity() {
             //validar si los datos son correctos
             if(email.text.toString() == "user" && password.text.toString() == "12345"){
                 //regresa al menu principal
-                val intent = Intent(this,MainActivity::class.java)
+                val intent = Intent(this,MainActivity2::class.java)
                 startActivity(intent)
             }else{
                 Toast.makeText(this,"Correo o contraseña incorrecto", Toast.LENGTH_SHORT).show()
