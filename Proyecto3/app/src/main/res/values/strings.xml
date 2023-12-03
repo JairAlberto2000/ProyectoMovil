@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Bell’Italia</string>
+    <string name="title_home">Nosotros</string>
+    <string name="title_dashboard">Menú</string>
+    <string name="title_notifications">Registro</string>
+
+    <string name="info_tienda">Somos un establecimiento de comida italiana con una gran variedad de platillos 100% comida italiana </string>
+
+    <string name="fecha_de_la_cita">Fecha de la cita</string>
+    <string name="nombre">Nombre y apellidos</string>
+    <string name="correo">Correo Electronico</string>
+    <string name="registrar">Registrar</string>
+
+
+    <!-- Detalles -->
+    <string name="nombre_Platillo_1">Spaghetti alla carbonara</string>
+    <string name="detalle_Platillo_1">Una de las comidas más típicas de Italia, especialmente en Roma y la región del Lacio, es el Spaghetti alla carbonara. Entonces, tienes que probarla y no te vas a arrepentir. Pero, ojo, la verdadera receta italiana no requiere tocino ni nata, así que busca la auténtica carbonara italiana cuando estés en el país.</string>
+    <string name="ingredientes_Platillo_1">Spaghetti, huevos, queso Pecorino Romano, guanciale o panceta, pimienta negra.</string>
+    <string name="info_Platillo_1">Calorías: 450 kcal, Proteínas: 18 g, Carbohidratos: 60 g, Grasas: 15 g.</string>
+
+    <string name="nombre_Platillo_2">Lasagna</string>
+    <string name="detalle_Platillo_2">La lasaña también es muy popular en Italia y te sorprenderá su sabor. El plato se elabora con láminas de pasta que se colocan en capas, entre las que se intercala una salsa de carne picada con tomate y otros ingredientes. Por último, se ralla queso sobre la última capa y se lleva al horno.</string>
+    <string name="ingredientes_Platillo_2">Láminas de lasaña, carne molida, salsa de tomate, cebolla, zanahoria, apio, queso mozzarella, queso parmesano, bechamel.</string>
+    <string name="info_Platillo_2">Calorías: 350 kcal, Proteínas: 22 g, Carbohidratos: 35 g, Grasas: 15 g.</string>
+
+    <string name="nombre_Platillo_3">Pizza Margherita</string>
+    <string name="detalle_Platillo_3">Si vas a Italia, tienes que comer pizza. Hay muchas opciones por todos los rincones, así que elige la clásica Margherita, que es la más famosa del mundo. Esta también es muy tradicional en la ciudad de Nápoles, donde vas a encontrar la base de pizza más blanda, además de tener el borde grueso.</string>
+    <string name="ingredientes_Platillo_3">Masa de pizza, salsa de tomate, queso mozzarella, tomates frescos, albahaca fresca, aceite de oliva.</string>
+    <string name="info_Platillo_3">Calorías: 270 kcal, Proteínas: 11 g, Carbohidratos: 33 g, Grasas: 9 g.</string>
+
+    <string name="nombre_Platillo_4">Tagliatelle al ragù bolognese</string>
+    <string name="detalle_Platillo_4">Este plato es muy tradicional en la ciudad de Bolonia, por eso que, si vas a esta región del país, no dejes de probarlo. La comida se sirve con tagliatelle al huevo, cubierta con una exquisita capa de queso parmesano rallado. Es una opción perfecta para un almuerzo en familia en la tierra de la pasta.</string>
+    <string name="ingredientes_Platillo_4">Tagliatelle, carne molida (ternera y cerdo), salsa de tomate, cebolla, zanahoria, apio, vino tinto, leche, queso parmesano.</string>
+    <string name="info_Platillo_4">Calorías: 400 kcal, Proteínas: 20 g, Carbohidratos: 45 g, Grasas: 15 g.</string>
+
+    <string name="nombre_Platillo_5">Risotto alla milanese</string>
+    <string name="detalle_Platillo_5">Este risotto es muy típico de la ciudad de Milán y es considerado símbolo de Lombardía. Hecho con arroz, la característica que destaca a esta comida es que tiene una tonalidad amarilla debido al uso del azafrán. El plato lleva ingredientes simples, pero juntos forman un sabor increíble.</string>
+    <string name="ingredientes_Platillo_5">Arroz arborio, caldo de pollo o vegetal, azafrán, cebolla, vino blanco, queso parmesano, mantequilla.</string>
+    <string name="info_Platillo_5">Calorías: 320 kcal, Proteínas: 9 g, Carbohidratos: 50 g, Grasas: 8 g.</string>
+
+    <string name="nombre_Platillo_6">Gelato</string>
+    <string name="detalle_Platillo_6">Para completar la lista de recomendaciones, te dejamos los famosos helados italianos, que vas a encontrar por todos los rincones del país. Entonces, busca los que sean artesanales y elige el sabor que quieras, pero los más tradicionales son los de chocolate, pistacho y stracciatella.</string>
+    <string name="ingredientes_Platillo_6">Leche, crema, azúcar, yemas de huevo, sabores variados (vainilla, chocolate, frutas, etc.).</string>
+    <string name="info_Platillo_6">Calorías: 200 kcal, Proteínas: 4 g, Carbohidratos: 25 g, Grasas: 10 g.</string>
+
+    <string name="nombre_Platillo_7">Pantalon Naranja</string>
+    <string name="detalle_Platillo_7">Pantalon recto color naranja </string>
+
+    <string name="nombre_Bebida_1">Limoncello</string>
+    <string name="detalle_Bebida_1">Este aromático licor con sabor a limón, surgió a inicios del s. XX en Capri (Italia). Sin duda, es una de las bebidas italianas más conocidas en todo el mundo.
+    El limoncello es típico de la región de Campania, aunque también se produce en otras zonas, como Trieste, Trentino o Sicilia.
+    Suele disfrutarse tras las comidas, aunque también se usa como aromatizante en repostería.</string>
+    <string name="nombre_Bebida_2">Grappa</string>
+    <string name="detalle_Bebida_2">La grappa es una aguardiente de orujo. Se piensa que pueblos de la antigüedad como los egipcios, romanos y griegos, ya la consumían. No obstante, la bebida, tal y como la conocemos a día de hoy, surgió en el s. XVII en el municipio de Bassano del Grapa, situado al norte del país, en la región de Veneto.
+    En Italia es habitual disfrutar de esta bebida tras disfrutar de una copiosa comida. No obstante, contiene una alta graduación por lo que te recomendamos que no abuses de ella.</string>
+    <string name="nombre_Bebida_3">Fernet</string>
+    <string name="detalle_Bebida_3">El origen de esta bebida no está del todo claro. Se cree que nació en la Lombardía (Italia), pero existen quienes creen que pudo surgir en otros puntos de Europa como pueden ser Checoslovaquia o, incluso, Francia.
+    El fernet se puede tomar solo en el aperitivo, con café, o combinada (con cola, agua mineral, soda…). Como ocurría con la Grappa, tiene una graduación alta, por lo que recuerda… ¡disfrútala con moderación! </string>
+    <string name="nombre_Bebida_4">Sambuca</string>
+    <string name="detalle_Bebida_4">En región de Lazio es muy típico un licor que se llama Sambuca y que es muy similar al aguardiente de anís. Se comercializó por primera vez a finales del s. XIX en Civitavecchia (Italia y se prepara con aceites de la destilación de semillas de anís estrellado, que se disuelve en alcohol en estado puro.
+    La sambuca puede tomar sola, con hielo, flambeada, con café o con un grano de café tostado sumergido en el vaso (‘sambuca con mosca’).</string>
+    <string name="nombre_Bebida_5">Marrasquino</string>
+    <string name="detalle_Bebida_5">En la región de Zara se cultivan las conocidas cerezas marrascas, con cuya pulpa se hace el licor Marrasquino. Es una bebida dulce e incolora que te recomendamos que disfrutes en un delicioso cóctel, como podría ser el Sweet Manhattan.</string>
+    <string name="title_activity_ingreso">Ingreso</string>
+
+    <string name="Titulo">Inicio de sesión </string>
+    <string name="Contrasena">Contraseña</string>
+
+    <string name="Aceptar">Aceptar </string>
+    <string name="Cancelar">Cancelar</string>
+
+
+
+</resources>
