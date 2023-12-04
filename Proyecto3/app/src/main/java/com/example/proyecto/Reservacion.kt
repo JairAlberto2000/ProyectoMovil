@@ -1,8 +1,11 @@
 package com.example.proyecto
 
-class Reservacion(
+import java.io.Serializable
+
+data class Reservacion(
     val id: String,
     val fecha: String,
     val hora: String,
-    val numClientes: Int
-)
+    val numeroDeInvitados: Int,
+    val nombreCliente: String
+) : Serializable
