@@ -12,7 +12,6 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.proyecto.Detalle
 import com.example.proyecto.R
 import com.example.proyecto.databinding.FragmentDashboardBinding
 
@@ -42,7 +41,7 @@ class DashboardFragment : Fragment() {
         return root
     }
 
-    fun splash(prod: String){
+    /*fun splash(prod: String){
         val progressDialog = Dialog(requireContext())
         progressDialog.setContentView(R.layout.progress_dialog)
         progressDialog.setCancelable(false)
@@ -96,7 +95,7 @@ class DashboardFragment : Fragment() {
         binding.imgProducto10.setOnClickListener{
             splash("10")
         }
-    }
+    }*/
 
     override fun onDestroyView() {
         super.onDestroyView()
