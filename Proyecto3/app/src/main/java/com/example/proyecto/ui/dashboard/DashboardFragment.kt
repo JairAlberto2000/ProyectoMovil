@@ -12,7 +12,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.proyecto.Detalle
+//import com.example.proyecto.Detalle
 import com.example.proyecto.R
 import com.example.proyecto.databinding.FragmentDashboardBinding
 
@@ -55,10 +55,10 @@ class DashboardFragment : Fragment() {
                 progressBar.progress = progress
                 if(progress == 100){
                     //Start Activity
-                    val intent = Intent(requireContext(), Detalle::class.java)
-                    intent.putExtra("ID", prod)
+                    //val intent = Intent(requireContext(), Detalle::class.java)
+                    //intent.putExtra("ID", prod)
                     progressDialog.dismiss()
-                    startActivity(intent)
+                    //startActivity(intent)
                 }
             }, i * 20L)
         }
