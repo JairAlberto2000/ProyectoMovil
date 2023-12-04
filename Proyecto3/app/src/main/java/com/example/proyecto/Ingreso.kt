@@ -18,7 +18,7 @@ class Ingreso : AppCompatActivity() {
         setContentView(R.layout.activity_ingreso)
         //Asociar instancias con componentes fraficos
         email = findViewById(R.id.edtEmail)
-        password = findViewById(R.id.btnCancelar)
+        password = findViewById(R.id.edtPassword)
 
     }//onCreaate
 

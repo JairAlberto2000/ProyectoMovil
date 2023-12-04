@@ -22,4 +22,10 @@
         android:name="com.example.proyecto.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_reservas_clientes"
+        android:name="com.example.proyecto.ui.reservasCliente.ReservasClienteFragment"
+        android:label="Reservas"
+        tools:layout="@layout/fragment_reservas_cliente" />
 </navigation>

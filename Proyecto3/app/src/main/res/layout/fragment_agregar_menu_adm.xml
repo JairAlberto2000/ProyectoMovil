@@ -39,5 +39,13 @@
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="376dp" />
 
+    <Button
+        android:id="@+id/btnCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver cliente"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="376dp" />
+
 
 </LinearLayout>

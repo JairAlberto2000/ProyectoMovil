@@ -1,11 +1,14 @@
 package com.example.proyecto.ui.agregarMenuAdm
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.example.proyecto.DetallePlatilloActivity
+import com.example.proyecto.MainActivity
 import com.example.proyecto.Platillo
 import com.example.proyecto.PlatillosViewModel
 import com.example.proyecto.databinding.FragmentAgregarMenuAdmBinding
@@ -43,6 +46,11 @@ class AgregarMenuAdmFragment : Fragment() {
             // Limpiar campos después de agregar un platillo
             binding.etNombrePlatillo.text.clear()
             binding.etPrecioPlatillo.text.clear()
+        }
+
+        binding.btnCliente.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
         }
     }
 

@@ -25,5 +25,42 @@ import com.example.proyecto.databinding.FragmentDashboardBinding
 import com.example.proyecto.databinding.FragmentPedidosAdmBinding
 
 class DashboardFragment : Fragment() {
+    private var _binding:  FragmentDashboardBinding? = null
+    private val binding get() = _binding!!
 
+    private lateinit var platillosViewModel: PlatillosViewModel
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        platillosViewModel = ViewModelProvider(requireActivity()).get(PlatillosViewModel::class.java)
+
+        val recyclerView: RecyclerView = binding.recyclerView
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        val platillosAdapter = PlatillosAdapter(platillosViewModel.getPlatillos(), object : PlatillosAdapter.PlatilloClickListener {
+            override fun onPlatilloClick(platillo: Platillo) {
+                // Manejar clic en un platillo: abrir la actividad de detalles
+                val intent = Intent(requireContext(), DetallePlatilloActivity::class.java)
+                intent.putExtra("nombrePlatillo", platillo.nombre)
+                intent.putExtra("precioPlatillo", platillo.precio)
+                startActivity(intent)
+            }
+        })
+
+        recyclerView.adapter = platillosAdapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
