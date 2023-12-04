@@ -76,5 +76,5 @@
     <string name="navigation_drawer_close">Cerrar menú</string>
     <string name="title_activity_main2">MainActivity2</string>
 
-
+    <string name="inventario">Inventario</string>
 </resources>
