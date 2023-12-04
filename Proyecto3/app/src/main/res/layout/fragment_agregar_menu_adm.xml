@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.agregarMenuAdm.AgregarMenuAdmFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Agregar menu" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/etNombrePlatillo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del Platillo"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <EditText
+        android:id="@+id/etPrecioPlatillo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Precio del Platillo"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+    <EditText
+        android:id="@+id/etInfoNutricional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Información Nutricional"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="264dp" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="376dp" />
+
+
+</LinearLayout>
