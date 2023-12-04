@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.proyecto.DetallePlatilloActivity
 import com.example.proyecto.MainActivity
+import com.example.proyecto.MyApp
 import com.example.proyecto.Platillo
 import com.example.proyecto.PlatillosViewModel
 import com.example.proyecto.databinding.FragmentAgregarMenuAdmBinding
@@ -20,7 +22,13 @@ class AgregarMenuAdmFragment : Fragment() {
     private var _binding: FragmentAgregarMenuAdmBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var platillosViewModel: PlatillosViewModel
+    //private lateinit var platillosViewModel: PlatillosViewModel
+    //private lateinit var platillosViewModel: PlatillosViewModel
+    //private lateinit var sharedViewModel: PlatillosViewModel
+
+    val platillosViewModel: PlatillosViewModel by lazy {
+        (requireActivity().application as MyApp).platillosViewModel
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +42,10 @@ class AgregarMenuAdmFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        platillosViewModel = ViewModelProvider(requireActivity()).get(PlatillosViewModel::class.java)
+        //platillosViewModel = ViewModelProvider(requireActivity()).get(PlatillosViewModel::class.java)
+       // platillosViewModel = ViewModelProvider(this).get(PlatillosViewModel::class.java)
+        //sharedViewModel = ViewModelProvider(this).get(PlatillosViewModel::class.java)
+
 
         binding.btnGuardar.setOnClickListener {
             val nombre = binding.etNombrePlatillo.text.toString()

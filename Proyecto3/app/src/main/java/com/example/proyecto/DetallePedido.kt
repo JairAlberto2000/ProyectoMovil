@@ -3,16 +3,13 @@ package com.example.proyecto
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
+import com.example.proyecto.databinding.ActivityDetallePedidoBinding
 import com.example.proyecto.databinding.ActivityDetallePlatilloBinding
 
-class DetallePlatilloActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityDetallePlatilloBinding
+class DetallePedido : AppCompatActivity() {
+    private lateinit var binding: ActivityDetallePedidoBinding
     private lateinit var navController: NavController
     //private lateinit var platillosViewModel: PlatillosViewModel
 
@@ -21,11 +18,11 @@ class DetallePlatilloActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetallePlatilloBinding.inflate(layoutInflater)
+        binding = ActivityDetallePedidoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Inicializar el ViewModel
-       // platillosViewModel = ViewModelProvider(this).get(PlatillosViewModel::class.java)
+        // platillosViewModel = ViewModelProvider(this).get(PlatillosViewModel::class.java)
 
         // Obtener detalles del intent
         val nombre = intent.getStringExtra("nombrePlatillo")
@@ -36,18 +33,5 @@ class DetallePlatilloActivity : AppCompatActivity() {
         binding.tvPrecioDetalle.text = precio.toString()
         // Agregar más vistas según sea necesario para otros detalles
 
-
-        binding.btnAgregar.setOnClickListener {
-            val platillo = Platillo(nombre, precio)
-            platillosViewModel.agregarPlatilloAlPedido(platillo)
-
-            // Informar al usuario que se agregó el platillo al pedido
-            Toast.makeText(this, "Platillo agregado al pedido", Toast.LENGTH_SHORT).show()
-        }
-
-        binding.btnRegresarAdm.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
-            startActivity(intent)
-        }
     }
 }

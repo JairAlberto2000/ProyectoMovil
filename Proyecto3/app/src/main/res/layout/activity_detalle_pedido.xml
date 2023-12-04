@@ -4,10 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#FFF5e1"
     android:orientation="vertical"
-    tools:context=".DetallePlatilloActivity">
+    tools:context=".DetallePedido">
+
 
     <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Detalles del pedido"/>
+
+    <TextView
+        android:layout_marginTop="17dp"
         android:id="@+id/tvNombreDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,18 +30,11 @@
         android:layout_height="wrap_content"
         android:text="Precio del Platillo"/>
 
-    <!-- Otros elementos en tu layout -->
-
     <Button
-        android:id="@+id/btnAgregar"
+        android:layout_marginTop="15dp"
+        android:id="@+id/btnTerminarPedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar a pedido"/>
-
-    <Button
-        android:id="@+id/btnRegresarAdm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ver administrador"/>
+        android:text="Terminar pedido"/>
 
 </LinearLayout>

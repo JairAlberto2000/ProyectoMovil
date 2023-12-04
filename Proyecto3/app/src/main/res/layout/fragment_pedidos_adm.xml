@@ -6,11 +6,7 @@
     android:orientation="vertical"
     tools:context=".ui.pedidosAdm.PedidosAdmFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFF5e1"
-        android:text="pedidos" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"

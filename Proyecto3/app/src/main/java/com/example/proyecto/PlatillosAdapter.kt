@@ -10,10 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto.databinding.ActivityPlatillosAdapterBinding
 
 
-class PlatillosAdapter(private val platillos: List<Platillo>, private val clickListener: PlatilloClickListener) : RecyclerView.Adapter<PlatillosAdapter.PlatilloViewHolder>() {
+class PlatillosAdapter(
+    private var platillos: List<Platillo>,
+    private val clickListener: PlatilloClickListener
+) : RecyclerView.Adapter<PlatillosAdapter.PlatilloViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlatilloViewHolder {
-        val binding = ActivityPlatillosAdapterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ActivityPlatillosAdapterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PlatilloViewHolder(binding)
     }
 
@@ -26,7 +30,13 @@ class PlatillosAdapter(private val platillos: List<Platillo>, private val clickL
         return platillos.size
     }
 
-    inner class PlatilloViewHolder(private val binding: ActivityPlatillosAdapterBinding) : RecyclerView.ViewHolder(binding.root) {
+    fun actualizarLista(nuevaLista: List<Platillo>) {
+        platillos = nuevaLista
+        notifyDataSetChanged()
+    }
+
+    inner class PlatilloViewHolder(private val binding: ActivityPlatillosAdapterBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(platillo: Platillo) {
             binding.tvNombre.text = platillo.nombre
             binding.tvPrecio.text = platillo.precio.toString()
