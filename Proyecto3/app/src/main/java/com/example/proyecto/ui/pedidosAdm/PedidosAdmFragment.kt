@@ -1,45 +1,61 @@
 package com.example.proyecto.ui.pedidosAdm
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.proyecto.DetallePlatilloActivity
+import com.example.proyecto.Platillo
+import com.example.proyecto.PlatillosAdapter
+import com.example.proyecto.PlatillosViewModel
 import com.example.proyecto.R
-
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.example.proyecto.databinding.FragmentDashboardBinding
+import com.example.proyecto.databinding.FragmentPedidosAdmBinding
 
 class PedidosAdmFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding:  FragmentPedidosAdmBinding? = null
+    private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var platillosViewModel: PlatillosViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pedidos_adm, container, false)
+    ): View {
+        _binding = FragmentPedidosAdmBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+            platillosViewModel = ViewModelProvider(requireActivity()).get(PlatillosViewModel::class.java)
 
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PedidosAdmFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+            val recyclerView: RecyclerView = binding.recyclerView
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+            val platillosAdapter = PlatillosAdapter(platillosViewModel.getPlatillos(), object : PlatillosAdapter.PlatilloClickListener {
+                override fun onPlatilloClick(platillo: Platillo) {
+                    // Manejar clic en un platillo: abrir la actividad de detalles
+                    val intent = Intent(requireContext(), DetallePlatilloActivity::class.java)
+                    intent.putExtra("nombrePlatillo", platillo.nombre)
+                    intent.putExtra("precioPlatillo", platillo.precio)
+                    startActivity(intent)
                 }
-            }
+            })
+
+            recyclerView.adapter = platillosAdapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
