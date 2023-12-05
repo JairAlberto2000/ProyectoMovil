@@ -1,60 +1,67 @@
 package com.example.proyecto.ui.reservasCliente
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.proyecto.R
+import android.widget.EditText
+import android.widget.Button
+import android.widget.Toast
+import com.example.proyecto.Reservacion
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ReservasClienteFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ReservasClienteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var editTextFecha: EditText
+    private lateinit var editTextHora: EditText
+    private lateinit var editTextClientes: EditText
+    private lateinit var editTextNombreCliente: EditText
+    private lateinit var botonReservar: Button
 
+    // Arreglo para almacenar las reservaciones
+    private val reservaciones = mutableListOf<Reservacion>()
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reservas_cliente, container, false)
+        val view = inflater.inflate(R.layout.fragment_reserva_cliente, container, false)
+
+        editTextFecha = view.findViewById(R.id.editTextFecha)
+        editTextHora = view.findViewById(R.id.editTextHora)
+        editTextClientes = view.findViewById(R.id.editTextClientes)
+        editTextNombreCliente = view.findViewById(R.id.editTextNombreCliente)
+        botonReservar = view.findViewById(R.id.botonReservar)
+
+        botonReservar.setOnClickListener { hacerReservacion() }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ReservasClienteFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ReservasClienteFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun hacerReservacion() {
+        val fecha = editTextFecha.text.toString()
+        val hora = editTextHora.text.toString()
+        val invitados = editTextClientes.text.toString().toIntOrNull()
+        val nombreCliente = editTextNombreCliente.text.toString()
+
+        if (fecha.isNotEmpty() && hora.isNotEmpty() && invitados != null && nombreCliente.isNotEmpty()) {
+            val nuevaReservacion = Reservacion(
+                id = System.currentTimeMillis().toString(),
+                fecha = fecha,
+                hora = hora,
+                numeroDeInvitados = invitados,
+                nombreCliente = nombreCliente
+            )
+
+            reservaciones.add(nuevaReservacion)
+
+            Toast.makeText(requireContext(), "Reservación realizada", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
+        }
     }
 }
