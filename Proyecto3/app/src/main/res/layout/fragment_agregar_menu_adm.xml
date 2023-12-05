@@ -68,5 +68,16 @@
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="376dp" />
 
+    <Button
+        android:id="@+id/btnCerrarSesion2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#c73a2c"
+        android:fontFamily="@font/architects_daughter"
+        android:onClick="cerrar2"
+        android:text="@string/cerrarsesion"
+        android:textColor="#f3dab2"
+        android:textStyle="bold" />
+
 
 </LinearLayout>

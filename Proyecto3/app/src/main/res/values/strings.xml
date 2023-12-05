@@ -87,4 +87,5 @@ su ambiente acogedor.</string>
     <string name="title_activity_main2">MainActivity2</string>
 
     <string name="inventario">Inventario</string>
+    <string name="cerrarsesion">Cerrar Sesion</string>
 </resources>

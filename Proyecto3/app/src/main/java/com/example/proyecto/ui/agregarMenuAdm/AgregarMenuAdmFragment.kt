@@ -7,13 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.example.proyecto.DetallePlatilloActivity
+import com.example.proyecto.Ingreso
 import com.example.proyecto.MainActivity
 import com.example.proyecto.MyApp
 import com.example.proyecto.Platillo
 import com.example.proyecto.PlatillosViewModel
+import com.example.proyecto.R
 import com.example.proyecto.databinding.FragmentAgregarMenuAdmBinding
 
 private const val ARG_PARAM1 = "param1"
@@ -65,6 +64,12 @@ class AgregarMenuAdmFragment : Fragment() {
 
         binding.btnCliente.setOnClickListener {
             val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        binding.btnCerrarSesion2.setOnClickListener {
+            val intent = Intent(requireContext(), Ingreso::class.java)
             startActivity(intent)
         }
     }
