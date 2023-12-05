@@ -21,5 +21,6 @@
         android:layout_height="match_parent"
         android:layout_below="@id/searchView"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:textAlignment="center" />
 </RelativeLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f4dcb6"
     android:orientation="vertical"
     tools:context=".ui.dashboard.DashboardFragment">
 
@@ -11,12 +12,15 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="454dp" />
+        android:layout_height="454dp"
+        android:background="#f4dcb6"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/btnVerFavoritos"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#658f52"
         android:gravity="center"
         android:text="Ver platillos favoritos" />
 

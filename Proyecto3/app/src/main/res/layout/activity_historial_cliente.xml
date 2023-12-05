@@ -4,21 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#f4dcb6"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".HistorialCliente">
 
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/alex_brush"
         android:gravity="center"
-        android:text="Detalles del pedido"/>
+        android:text="Detalles del pedido"
+        android:textAlignment="center"
+        android:textColor="#467733"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

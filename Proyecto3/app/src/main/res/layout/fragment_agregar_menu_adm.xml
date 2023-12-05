@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/almendra_display"
         android:hint="Nombre del Platillo"
+        android:textAlignment="center"
         android:textColorHint="#467733"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
@@ -25,6 +26,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/almendra_display"
         android:hint="Precio del Platillo"
+        android:textAlignment="center"
         android:textColorHint="#467733"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="29dp"
@@ -36,6 +38,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/almendra_display"
         android:hint="Información Nutricional"
+        android:textAlignment="center"
         android:textColorHint="#467733"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="32dp"
@@ -43,7 +46,7 @@
 
     <Button
         android:id="@+id/btnGuardar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#658f52"
         android:fontFamily="@font/architects_daughter"
@@ -55,7 +58,7 @@
 
     <Button
         android:id="@+id/btnCliente"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#3f7b33"
         android:fontFamily="@font/architects_daughter"

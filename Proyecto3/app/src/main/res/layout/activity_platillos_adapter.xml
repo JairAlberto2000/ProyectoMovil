@@ -11,15 +11,25 @@
 
     <TextView
         android:id="@+id/tvNombre"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre del Platillo" />
+        android:fontFamily="@font/almendra_display"
+        android:text="Nombre del Platillo"
+        android:textAlignment="center"
+        android:textColor="#658f52"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvPrecio"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Precio del Platillo" />
+        android:fontFamily="@font/almendra_display"
+        android:text="Precio del Platillo"
+        android:textAlignment="center"
+        android:textColor="#658f52"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <!-- Otros elementos de diseño que puedas necesitar -->
 
