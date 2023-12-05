@@ -5,19 +5,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.proyecto.databinding.ActivityPedidosAdapterBinding
-import com.example.proyecto.databinding.ActivityPlatillosAdapterBinding
+import com.example.proyecto.databinding.ActivityFavoritosAdapterBinding
+import com.example.proyecto.databinding.ActivityPedidosHistorialAdapterBinding
 
-class PedidosAdapter(
-    private var pedidos: List<Pedido>,
-    private val clickListener: PlatilloClickListener
-) : RecyclerView.Adapter<PedidosAdapter.PedidoViewHolder>() {
+class FavoritosAdapter (private var pedidos: List<Fav>,
+                               private val clickListener: PlatilloClickListener
+) : RecyclerView.Adapter<FavoritosAdapter.PedidoViewHolder>() {
 
     var numeroPedido: Int = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PedidoViewHolder {
         val binding =
-            ActivityPedidosAdapterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ActivityFavoritosAdapterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PedidoViewHolder(binding)
     }
 
@@ -30,19 +29,19 @@ class PedidosAdapter(
         return pedidos.size
     }
 
-    fun actualizarLista(nuevaLista: List<Pedido>) {
+    fun actualizarLista(nuevaLista: List<Fav>) {
         pedidos = nuevaLista
         notifyDataSetChanged()
     }
 
-    inner class PedidoViewHolder(private val binding: ActivityPedidosAdapterBinding) :
+    inner class PedidoViewHolder(private val binding: ActivityFavoritosAdapterBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(pedido: Pedido) {
+        fun bind(pedido: Fav) {
             // Puedes personalizar la visualización del pedido aquí
-            binding.tvNombre.text = "Pedido ${adapterPosition + 1}"
+            binding.tvNombre.text = "Platillo favorito: ${adapterPosition + 1}"
             numeroPedido=adapterPosition+1
-            binding.tvPrecio.text = "Total: ${calcularTotal(pedido)}"
+            binding.tvPrecio.text = "Precio: ${calcularTotal(pedido)}"
 
             itemView.setOnClickListener {
                 // Manejar clic en un pedido: abrir la actividad de detalles
@@ -51,13 +50,15 @@ class PedidosAdapter(
             }
         }
 
-        private fun calcularTotal(pedido: Pedido): Double {
+        private fun calcularTotal(pedido: Fav): Double {
             // Puedes personalizar la lógica para calcular el total del pedido
             return pedido.platillos.sumByDouble { it.precio }
         }
+
     }
 
     interface PlatilloClickListener {
         fun onPlatilloClick(platillo: Platillo?, position: Int)
     }
+
 }

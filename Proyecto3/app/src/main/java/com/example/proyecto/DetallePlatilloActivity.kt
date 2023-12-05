@@ -40,6 +40,7 @@ class DetallePlatilloActivity : AppCompatActivity() {
         binding.btnAgregar.setOnClickListener {
             val platillo = Platillo(nombre, precio)
             platillosViewModel.agregarPlatilloAlPedido(platillo)
+            platillosViewModel.agregarPlatilloAlPedido1(platillo)
 
             // Informar al usuario que se agregó el platillo al pedido
             Toast.makeText(this, "Platillo agregado al pedido", Toast.LENGTH_SHORT).show()
@@ -49,5 +50,19 @@ class DetallePlatilloActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }
+
+        binding.btnVerHistorial.setOnClickListener {
+            val intent = Intent(this, HistorialCliente::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnAgregarFavoritos.setOnClickListener {
+            val platillo = Platillo(nombre, precio)
+            platillosViewModel.agregarPlatilloAfavoritos(platillo)
+
+            // Informar al usuario que se agregó el platillo al pedido
+            Toast.makeText(this, "Platillo agregado a favoritos", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }

@@ -14,6 +14,24 @@
         android:theme="@style/Theme.Proyecto"
         tools:targetApi="31">
         <activity
+            android:name=".DetallesFav"
+            android:exported="false" />
+        <activity
+            android:name=".FavoritosAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Favoritos"
+            android:exported="false" />
+        <activity
+            android:name=".PedidosHistorialAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".FavoritosCliente"
+            android:exported="false" />
+        <activity
+            android:name=".HistorialCliente"
+            android:exported="false" />
+        <activity
             android:name=".DetallePedido"
             android:exported="false" />
         <activity

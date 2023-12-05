@@ -18,6 +18,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto.DetallePlatilloActivity
+import com.example.proyecto.FavoritosCliente
+import com.example.proyecto.HistorialCliente
 import com.example.proyecto.MyApp
 import com.example.proyecto.Platillo
 import com.example.proyecto.PlatillosAdapter
@@ -65,6 +67,11 @@ class DashboardFragment : Fragment() {
         platillosViewModel.obtenerPlatillos().observe(viewLifecycleOwner, Observer { platillos ->
             platillosAdapter.actualizarLista(platillos)
         })
+
+        binding.btnVerFavoritos.setOnClickListener {
+            val intent = Intent(requireContext(), FavoritosCliente::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroyView() {

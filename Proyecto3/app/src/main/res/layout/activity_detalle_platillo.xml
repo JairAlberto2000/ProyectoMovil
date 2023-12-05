@@ -33,4 +33,15 @@
         android:layout_height="wrap_content"
         android:text="Ver administrador"/>
 
+    <Button
+        android:id="@+id/btnVerHistorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver historial"/>
+    <Button
+        android:id="@+id/btnAgregarFavoritos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar a favoritos"/>
+
 </LinearLayout>

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.proyecto.DetallePlatilloActivity
@@ -57,6 +58,9 @@ class AgregarMenuAdmFragment : Fragment() {
             // Limpiar campos después de agregar un platillo
             binding.etNombrePlatillo.text.clear()
             binding.etPrecioPlatillo.text.clear()
+
+            // Informar al usuario que se agregó el platillo al pedido
+            Toast.makeText(requireContext(), "Platillo agregado al menu principal con exito", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnCliente.setOnClickListener {

@@ -1,15 +1,13 @@
 package com.example.proyecto
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.navigation.NavController
 import com.example.proyecto.databinding.ActivityDetallePedidoBinding
-import com.example.proyecto.databinding.ActivityDetallePlatilloBinding
+import com.example.proyecto.databinding.ActivityDetallesFavBinding
 
-class DetallePedido : AppCompatActivity() {
-    private lateinit var binding: ActivityDetallePedidoBinding
+class DetallesFav : AppCompatActivity() {
+    private lateinit var binding: ActivityDetallesFavBinding
     private lateinit var navController: NavController
     //private lateinit var platillosViewModel: PlatillosViewModel
 
@@ -19,7 +17,7 @@ class DetallePedido : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetallePedidoBinding.inflate(layoutInflater)
+        binding = ActivityDetallesFavBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Inicializar el ViewModel
@@ -35,11 +33,7 @@ class DetallePedido : AppCompatActivity() {
         binding.tvPrecioDetalle.text = precio.toString()
         // Agregar más vistas según sea necesario para otros detalles
 
-        binding.btnTerminarPedido.setOnClickListener {
-            if (position != -1) {
-                platillosViewModel.eliminarPedido(position)
-                finish()
-            }
-        }
+
     }
+
 }

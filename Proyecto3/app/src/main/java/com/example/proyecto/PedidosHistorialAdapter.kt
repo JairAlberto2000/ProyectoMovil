@@ -6,18 +6,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto.databinding.ActivityPedidosAdapterBinding
-import com.example.proyecto.databinding.ActivityPlatillosAdapterBinding
+import com.example.proyecto.databinding.ActivityPedidosHistorialAdapterBinding
 
-class PedidosAdapter(
-    private var pedidos: List<Pedido>,
-    private val clickListener: PlatilloClickListener
-) : RecyclerView.Adapter<PedidosAdapter.PedidoViewHolder>() {
+class PedidosHistorialAdapter (private var pedidos: List<HistorialP>,
+                               private val clickListener: PlatilloClickListener
+) : RecyclerView.Adapter<PedidosHistorialAdapter.PedidoViewHolder>() {
 
     var numeroPedido: Int = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PedidoViewHolder {
         val binding =
-            ActivityPedidosAdapterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ActivityPedidosHistorialAdapterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PedidoViewHolder(binding)
     }
 
@@ -30,15 +29,15 @@ class PedidosAdapter(
         return pedidos.size
     }
 
-    fun actualizarLista(nuevaLista: List<Pedido>) {
+    fun actualizarLista(nuevaLista: List<HistorialP>) {
         pedidos = nuevaLista
         notifyDataSetChanged()
     }
 
-    inner class PedidoViewHolder(private val binding: ActivityPedidosAdapterBinding) :
+    inner class PedidoViewHolder(private val binding: ActivityPedidosHistorialAdapterBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(pedido: Pedido) {
+        fun bind(pedido: HistorialP) {
             // Puedes personalizar la visualización del pedido aquí
             binding.tvNombre.text = "Pedido ${adapterPosition + 1}"
             numeroPedido=adapterPosition+1
@@ -51,7 +50,7 @@ class PedidosAdapter(
             }
         }
 
-        private fun calcularTotal(pedido: Pedido): Double {
+        private fun calcularTotal(pedido: HistorialP): Double {
             // Puedes personalizar la lógica para calcular el total del pedido
             return pedido.platillos.sumByDouble { it.precio }
         }
@@ -60,4 +59,5 @@ class PedidosAdapter(
     interface PlatilloClickListener {
         fun onPlatilloClick(platillo: Platillo?, position: Int)
     }
+
 }

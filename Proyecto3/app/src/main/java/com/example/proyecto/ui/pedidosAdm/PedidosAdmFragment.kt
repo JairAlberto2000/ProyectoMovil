@@ -46,12 +46,13 @@ class PedidosAdmFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val pedidosAdapter = PedidosAdapter(emptyList(), object : PedidosAdapter.PlatilloClickListener {
-            override fun onPlatilloClick(platillo: Platillo?) {
+            override fun onPlatilloClick(platillo: Platillo?, position: Int) {
                 // Manejar clic en un platillo: abrir la actividad de detalles
                 platillo?.let {
                     val intent = Intent(requireContext(), DetallePedido::class.java)
                     intent.putExtra("nombrePlatillo", it.nombre)
                     intent.putExtra("precioPlatillo", it.precio)
+                    intent.putExtra("position", position) // Pasar la posición del pedido
 
                     startActivity(intent)
                 }
