@@ -10,9 +10,11 @@
         style="@android:style/Widget.ScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FF3647"
+        android:background="#f4dcb6"
         android:orientation="vertical"
-        android:scrollbarStyle="insideInset">
+        android:scrollbarStyle="insideInset"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,37 +31,31 @@
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="180dp"
-                android:layout_height="154dp"
-                android:layout_marginTop="48dp"
-                android:adjustViewBounds="true"
-                android:cropToPadding="true"
-                android:importantForAccessibility="no"
-                android:scaleType="centerInside"
-                app:srcCompat="@mipmap/ic_launcher_round"
-                tools:src="@mipmap/ic_launcher_round" />
-
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="@font/alex_brush"
                 android:text="@string/info_tienda"
-                android:textSize="16sp"
+                android:textColor="#4E312D"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
 
-            <ImageView
-                android:id="@+id/imgAvatar1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:importantForAccessibility="no"
-                app:srcCompat="@drawable/avatar"
-                tools:ignore="ImageContrastCheck" />
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="375dp"
+                android:layout_height="316dp"
+                android:layout_marginTop="48dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:importantForAccessibility="no"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/logo"
+                tools:src="@drawable/logo" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -67,8 +63,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="10dp"
-                android:text="@string/info_tienda"
-                android:textSize="16sp"
+                android:fontFamily="@font/alex_brush"
+                android:text="@string/info_tienda2"
+                android:textColor="#4E312D"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
 
 
