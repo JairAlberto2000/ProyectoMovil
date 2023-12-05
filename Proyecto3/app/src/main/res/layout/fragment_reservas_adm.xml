@@ -6,11 +6,8 @@
     android:background="#f4dcb6"
     tools:context=".ui.reservasAdm.ReservasAdmFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#f4dcb6"
-        android:text="reservas" />
-
+        android:layout_height="match_parent"/>
 </FrameLayout>

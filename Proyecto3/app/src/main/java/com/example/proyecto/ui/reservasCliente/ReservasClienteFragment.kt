@@ -10,6 +10,7 @@ import com.example.proyecto.R
 import android.widget.EditText
 import android.widget.Button
 import android.widget.Toast
+import com.example.proyecto.RepositorioReservaciones
 import com.example.proyecto.Reservacion
 
 class ReservasClienteFragment : Fragment() {
@@ -57,7 +58,8 @@ class ReservasClienteFragment : Fragment() {
                 nombreCliente = nombreCliente
             )
 
-            reservaciones.add(nuevaReservacion)
+            // Agregar la nueva reservación al singleton
+            RepositorioReservaciones.reservaciones.add(nuevaReservacion)
 
             Toast.makeText(requireContext(), "Reservación realizada", Toast.LENGTH_SHORT).show()
         } else {
