@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f4dcb6"
     android:gravity="center"
-    android:background="#FFF5e1"
     android:orientation="vertical"
     tools:context=".DetallePedido">
 
@@ -15,26 +15,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Detalles del pedido"/>
+        android:text="Detalles del pedido" />
 
     <TextView
-        android:layout_marginTop="17dp"
         android:id="@+id/tvNombreDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre del Platillo"/>
+        android:layout_marginTop="17dp"
+        android:text="Nombre del Platillo" />
 
     <TextView
         android:id="@+id/tvPrecioDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Precio del Platillo"/>
+        android:text="Precio del Platillo" />
 
     <Button
-        android:layout_marginTop="15dp"
         android:id="@+id/btnTerminarPedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Terminar pedido"/>
+        android:layout_marginTop="15dp"
+        android:text="Terminar pedido" />
 
 </LinearLayout>

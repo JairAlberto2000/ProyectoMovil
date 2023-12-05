@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f4dcb6"
     android:orientation="vertical"
     tools:context=".DetallePlatilloActivity">
 
@@ -11,13 +12,17 @@
         android:id="@+id/tvNombreDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre del Platillo"/>
+        android:fontFamily="@font/alex_brush"
+        android:text="Nombre del Platillo"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvPrecioDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Precio del Platillo"/>
+        android:fontFamily="@font/alex_brush"
+        android:text="Precio del Platillo"
+        android:textStyle="bold" />
 
     <!-- Otros elementos en tu layout -->
 
@@ -25,13 +30,15 @@
         android:id="@+id/btnAgregar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar a pedido"/>
+        android:backgroundTint="#658f52"
+        android:text="Agregar a pedido" />
 
     <Button
         android:id="@+id/btnRegresarAdm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ver administrador"/>
+        android:backgroundTint="#c73a2c"
+        android:text="Ver administrador" />
 
     <Button
         android:id="@+id/btnVerHistorial"

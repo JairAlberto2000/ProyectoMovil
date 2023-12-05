@@ -4,7 +4,17 @@
     <string name="title_dashboard">Menú</string>
     <string name="title_notifications">Registro</string>
 
-    <string name="info_tienda">Somos un establecimiento de comida italiana con una gran variedad de platillos 100% comida italiana </string>
+    <string name="info_tienda">El restaurante "Bell’Italia" se enorgullece de ofrecer un menú variado con
+especialidades regionales de Italia. Además de los clásicos platos de pasta y pizza,
+el restaurante destaca en la preparación de platos de carne y pescado frescos. Las
+recetas se basan en tradiciones familiares y se elaboran con ingredientes frescos y
+de alta calidad, incluyendo algunos importados directamente de Italia.</string>
+    <string name="info_tienda2">el chef
+Mexicano Jair (El chino) Tapia, y su colega, la chef mexicana Montse Huato, dedicaron varios años de su vida a aprender diversas técnicas italianas y a la
+perfección de recetas típicas y emblemáticas de Italia,gracias a su gran dedicación,
+el restaurante se ha ganado una sólida reputación por su auténtica cocina italiana y
+su ambiente acogedor.</string>
+    <string name="Registro">Crea una cuenta</string>
 
     <string name="fecha_de_la_cita">Fecha de la cita</string>
     <string name="nombre">Nombre y apellidos</string>
