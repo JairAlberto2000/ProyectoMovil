@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4dcb6"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".DetallePedido">
+
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alex_brush"
+        android:gravity="center"
+        android:text="Detalles del pedido"
+        android:textColor="#4E312D"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvNombreDetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:fontFamily="@font/alex_brush"
+        android:text="Nombre del Platillo"
+        android:textColor="#4E312D"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPrecioDetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alex_brush"
+        android:text="Precio del Platillo"
+        android:textColor="#4E312D"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnTerminarPedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#467733"
+        android:fontFamily="@font/architects_daughter"
+        android:text="Terminar pedido"
+        android:textColor="#f4dcb6" />
+
+</LinearLayout>
