@@ -3,30 +3,26 @@ package com.example.proyecto
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 
-class Ingreso : AppCompatActivity() {
+class inicio : AppCompatActivity() {
 
     private lateinit var firebaseAuth : FirebaseAuth
     private lateinit var authStateListener: FirebaseAuth.AuthStateListener
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ingreso)
+        setContentView(R.layout.activity_inicio)
 
-        val btnIngresar : Button = findViewById(R.id.btnAceptar)
+        val btnIngresar : Button = findViewById(R.id.btnIngresar)
         val edtCorreo : EditText = findViewById(R.id.edtCorreo)
         val edtContra : EditText = findViewById(R.id.edtContra)
-
-        val btnRegistrarU : Button = findViewById(R.id.btnRegistrarU)
-
         firebaseAuth = Firebase.auth
 
         btnIngresar.setOnClickListener {
@@ -39,11 +35,6 @@ class Ingreso : AppCompatActivity() {
                 Toast.makeText(this,"Ingresar informacion", Toast.LENGTH_SHORT).show()
             }
 
-        }
-
-        btnRegistrarU.setOnClickListener {
-            val intentU = Intent(this, registrarUsuarios::class.java)
-            startActivity(intentU)
         }
     }
 
@@ -64,10 +55,9 @@ class Ingreso : AppCompatActivity() {
 
                 } else {
                     val error = task.exception?.message
-                    Toast.makeText(baseContext, "Error correo o contrasena incorrectos", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, "Error: $error", Toast.LENGTH_SHORT).show()
                 }
             }
 
     }
-
-}//Class
+}
