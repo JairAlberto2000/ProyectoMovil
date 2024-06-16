@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4dcb6"
+    android:orientation="vertical"
+    tools:context=".DetallePlatilloActivity">
+
+    <TextView
+        android:id="@+id/tvNombreDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alex_brush"
+        android:text="Nombre del Platillo"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPrecioDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alex_brush"
+        android:text="Precio del Platillo"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <!-- Otros elementos en tu layout -->
+
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#658f52"
+        android:fontFamily="@font/architects_daughter"
+        android:text="Agregar a pedido"
+        android:textColor="#f4dcb6" />
+
+    <Button
+        android:id="@+id/btnRegresarAdm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#c73a2c"
+        android:fontFamily="@font/architects_daughter"
+        android:text="Ver administrador"
+        android:textColor="#f4dcb6" />
+
+    <Button
+        android:id="@+id/btnVerHistorial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4e312d"
+        android:fontFamily="@font/architects_daughter"
+        android:text="Ver historial"
+        android:textColor="#f4dcb6" />
+
+    <Button
+        android:id="@+id/btnAgregarFavoritos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#568203"
+        android:fontFamily="@font/architects_daughter"
+        android:text="Agregar a favoritos"
+        android:textColor="#f4dcb6" />
+
+</LinearLayout>

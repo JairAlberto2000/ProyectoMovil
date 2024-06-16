@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_pedidos"
+        android:icon="@drawable/baseline_food_bank_24"
+        android:title="Pedidos" />
+    <item
+        android:id="@+id/navigation_agregarmenu"
+        android:icon="@drawable/baseline_add_24"
+        android:title="Agregar" />
+    <item
+        android:id="@+id/navigation_inventario"
+        android:icon="@drawable/baseline_inventory_24"
+        android:title="Inventario" />
+    <item
+        android:id="@+id/navigation_reservas"
+        android:icon="@drawable/baseline_calendar_month_24"
+        android:title="Reservas" />
+</menu>
