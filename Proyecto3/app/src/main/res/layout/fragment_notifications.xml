@@ -25,39 +25,52 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnRegistrar"
+        android:id="@+id/btnRegistro"
         android:layout_width="122dp"
         android:layout_height="50dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
         android:backgroundTint="#658f52"
         android:fontFamily="@font/architects_daughter"
         android:text="Registrar"
         android:textColor="#f3dab2"
+        app:layout_constraintEnd_toStartOf="@+id/btnConsultar"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCorreoEletronico" />
+        app:layout_constraintTop_toBottomOf="@+id/imageVFoto" />
+
+    <ImageView
+        android:id="@+id/imageVFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTomarFotos"
+        tools:src="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/btnConsultar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="44dp"
         android:backgroundTint="#c73a2c"
         android:fontFamily="@font/architects_daughter"
         android:text="Consultar"
         android:textColor="#f3dab2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCorreoEletronico" />
+        app:layout_constraintTop_toBottomOf="@+id/imageVFoto" />
 
     <EditText
-        android:id="@+id/edtApellidoPaterno"
+        android:id="@+id/edtApellidos"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:fontFamily="@font/almendra_display"
-        android:hint="Apellido Paterno"
+        android:hint="Precio sugerido"
         android:inputType="text"
         android:textColorHint="#467733"
         android:textStyle="bold"
@@ -67,29 +80,13 @@
         app:layout_constraintTop_toBottomOf="@+id/edtNombre" />
 
     <EditText
-        android:id="@+id/edtApellidoMaterno"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:fontFamily="@font/almendra_display"
-        android:hint="Apellido Materno"
-        android:inputType="text"
-        android:textColorHint="#467733"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtApellidoPaterno" />
-
-    <EditText
         android:id="@+id/edtNombre"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="88dp"
         android:ems="10"
         android:fontFamily="@font/almendra_display"
-        android:hint="Nombre"
+        android:hint="Nombre del platillo"
         android:inputType="text"
         android:textColorHint="#467733"
         android:textStyle="bold"
@@ -98,34 +95,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edtNumeroTelefonico"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:fontFamily="@font/almendra_display"
-        android:hint="Numero telefonico"
-        android:inputType="phone"
-        android:textColorHint="#467733"
-        android:textStyle="bold"
+    <Button
+        android:id="@+id/btnTomarFotos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#3F51B5"
+        android:text="Tomar Foto"
+        android:textColor="#f3dab2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtApellidoMaterno" />
-
-    <EditText
-        android:id="@+id/edtCorreoEletronico"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:fontFamily="@font/almendra_display"
-        android:hint="@string/correo"
-        android:inputType="textEmailAddress"
-        android:textColorHint="#467733"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNumeroTelefonico" />
+        app:layout_constraintTop_toBottomOf="@+id/edtApellidos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
