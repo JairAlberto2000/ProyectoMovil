@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.proyecto.FavoritosCliente
 import com.example.proyecto.Ingreso
 import com.example.proyecto.MainActivity
+import com.example.proyecto.MapsActivity
 import com.example.proyecto.Platillo
 import com.example.proyecto.R
 import com.example.proyecto.databinding.FragmentHomeBinding
@@ -43,6 +44,11 @@ class HomeFragment : Fragment() {
 
             binding.btnCerrarSesion.setOnClickListener {
                 val intent = Intent(requireContext(), Ingreso::class.java)
+                startActivity(intent)
+            }
+            // Referencia al nuevo botón "btnMostrarRuta"
+            binding.btnMapa.setOnClickListener {
+                val intent = Intent(requireContext(), MapsActivity::class.java)
                 startActivity(intent)
             }
         }
