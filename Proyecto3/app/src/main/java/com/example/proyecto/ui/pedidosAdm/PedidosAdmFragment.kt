@@ -1,16 +1,9 @@
 package com.example.proyecto.ui.pedidosAdm
 
-import android.content.Intent
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
+
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+
 import com.example.proyecto.DetallePedido
 import com.example.proyecto.DetallePlatilloActivity
 import com.example.proyecto.MyApp
@@ -22,13 +15,24 @@ import com.example.proyecto.R
 import com.example.proyecto.databinding.FragmentDashboardBinding
 import com.example.proyecto.databinding.FragmentPedidosAdmBinding
 
+import android.content.Intent
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.proyecto.Pedido
+
 class PedidosAdmFragment : Fragment() {
+
     private var _binding: FragmentPedidosAdmBinding? = null
     private val binding get() = _binding!!
 
-    private val platillosViewModel: PlatillosViewModel by lazy {
-        (requireActivity().application as MyApp).platillosViewModel
-    }
+    private val platillosViewModel: PlatillosViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,23 +50,24 @@ class PedidosAdmFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val pedidosAdapter = PedidosAdapter(emptyList(), object : PedidosAdapter.PlatilloClickListener {
-            override fun onPlatilloClick(platillo: Platillo?, position: Int) {
+            override fun onPlatilloClick(pedido: Pedido) {
                 // Manejar clic en un platillo: abrir la actividad de detalles
-                platillo?.let {
+
                     val intent = Intent(requireContext(), DetallePedido::class.java)
-                    intent.putExtra("nombrePlatillo", it.nombre)
-                    intent.putExtra("precioPlatillo", it.precio)
-                    intent.putExtra("position", position) // Pasar la posición del pedido
+                    intent.putExtra("nombrePlatillo", pedido.nombre)
+                    intent.putExtra("precioPlatillo", pedido.total)
+                    intent.putExtra("pedidoId", pedido.id) // Pasar el ID del pedido
+                   // intent.putExtra("position", position) // Pasar la posición del pedido
 
                     startActivity(intent)
-                }
+
             }
         })
 
         recyclerView.adapter = pedidosAdapter
 
         // Observa los cambios en LiveData y actualiza el adaptador
-        platillosViewModel.obtenerPedidos().observe(viewLifecycleOwner, Observer { pedidos ->
+        platillosViewModel.pedidos.observe(viewLifecycleOwner, Observer { pedidos ->
             pedidosAdapter.actualizarLista(pedidos)
         })
     }
@@ -71,5 +76,4 @@ class PedidosAdmFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

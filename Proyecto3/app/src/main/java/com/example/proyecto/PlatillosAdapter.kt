@@ -2,12 +2,12 @@ package com.example.proyecto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto.databinding.ActivityPlatillosAdapterBinding
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 
 
 class PlatillosAdapter(
@@ -16,8 +16,7 @@ class PlatillosAdapter(
 ) : RecyclerView.Adapter<PlatillosAdapter.PlatilloViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlatilloViewHolder {
-        val binding =
-            ActivityPlatillosAdapterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ActivityPlatillosAdapterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PlatilloViewHolder(binding)
     }
 
@@ -37,9 +36,11 @@ class PlatillosAdapter(
 
     inner class PlatilloViewHolder(private val binding: ActivityPlatillosAdapterBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bind(platillo: Platillo) {
-            binding.tvNombre.text = platillo.nombre
-            binding.tvPrecio.text = platillo.precio.toString()
+            binding.tvNombre.text = "Nombre: ${platillo.Nombre}"
+            binding.tvCosto.text = "Costo: ${platillo.Costo}"
+            binding.tvInfo.text = "Info: ${platillo.Info}"
 
             itemView.setOnClickListener {
                 clickListener.onPlatilloClick(platillo)

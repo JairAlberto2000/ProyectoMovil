@@ -40,24 +40,22 @@ class PedidosAdapter(
 
         fun bind(pedido: Pedido) {
             // Puedes personalizar la visualización del pedido aquí
-            binding.tvNombre.text = "Pedido ${adapterPosition + 1}"
+            binding.tvNumero.text = "Pedido ${adapterPosition + 1}"
             numeroPedido=adapterPosition+1
-            binding.tvPrecio.text = "Total: ${calcularTotal(pedido)}"
+            binding.tvNombre.text = "Nombre: ${pedido.nombre}"
+            binding.tvPrecio.text = "Total: ${pedido.total}"
 
             itemView.setOnClickListener {
                 // Manejar clic en un pedido: abrir la actividad de detalles
                 // Puedes pasar información específica del pedido si es necesario
-                clickListener.onPlatilloClick(pedido.platillos.firstOrNull(), adapterPosition)
+                clickListener.onPlatilloClick(pedido)
             }
         }
 
-        private fun calcularTotal(pedido: Pedido): Double {
-            // Puedes personalizar la lógica para calcular el total del pedido
-            return pedido.platillos.sumByDouble { it.precio }
-        }
+
     }
 
     interface PlatilloClickListener {
-        fun onPlatilloClick(platillo: Platillo?, position: Int)
+        fun onPlatilloClick(pedido: Pedido)
     }
 }

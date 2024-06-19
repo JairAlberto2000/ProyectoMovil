@@ -28,6 +28,16 @@
         android:textSize="35sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/tvInfoDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alex_brush"
+        android:text="Info del Platillo"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
     <!-- Otros elementos en tu layout -->
 
     <Button

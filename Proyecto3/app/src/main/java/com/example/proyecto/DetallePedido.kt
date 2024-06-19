@@ -29,15 +29,17 @@ class DetallePedido : AppCompatActivity() {
         val nombre = intent.getStringExtra("nombrePlatillo")
         val precio = intent.getDoubleExtra("precioPlatillo", 0.0)
         val position = intent.getIntExtra("position", -1)
+        val pedidoId = intent.getStringExtra("pedidoId")
 
         // Mostrar detalles en las vistas de la actividad
+        //binding.tvNumeroDetalle.text = position.toString()
         binding.tvNombreDetalle.text = nombre
         binding.tvPrecioDetalle.text = precio.toString()
         // Agregar más vistas según sea necesario para otros detalles
 
         binding.btnTerminarPedido.setOnClickListener {
-            if (position != -1) {
-                platillosViewModel.eliminarPedido(position)
+            pedidoId?.let {
+                platillosViewModel.eliminarPedido(it)
                 finish()
             }
         }

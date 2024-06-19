@@ -21,6 +21,7 @@
         android:textSize="35sp"
         android:textStyle="bold" />
 
+
     <TextView
         android:id="@+id/tvNombreDetalle"
         android:layout_width="wrap_content"

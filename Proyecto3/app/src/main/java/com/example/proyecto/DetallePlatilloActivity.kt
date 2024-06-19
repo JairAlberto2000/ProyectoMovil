@@ -1,49 +1,62 @@
 package com.example.proyecto
 
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import com.example.proyecto.databinding.ActivityDetallePlatilloBinding
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class DetallePlatilloActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityDetallePlatilloBinding
-    private lateinit var navController: NavController
-    //private lateinit var platillosViewModel: PlatillosViewModel
 
-    val platillosViewModel: PlatillosViewModel by lazy {
-        (this.application as MyApp).platillosViewModel
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
+    private lateinit var binding: ActivityDetallePlatilloBinding
+    private val platillosViewModel: PlatillosViewModel by lazy {
+        (application as MyApp).platillosViewModel
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetallePlatilloBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inicializar el ViewModel
-       // platillosViewModel = ViewModelProvider(this).get(PlatillosViewModel::class.java)
+        firebaseAuth = Firebase.auth
+        db = FirebaseFirestore.getInstance()
 
-        // Obtener detalles del intent
         val nombre = intent.getStringExtra("nombrePlatillo")
         val precio = intent.getDoubleExtra("precioPlatillo", 0.0)
+        val info = intent.getStringExtra("infoPlatillo")
+        val idPlat = intent.getStringExtra("idPlatillo")
 
-        // Mostrar detalles en las vistas de la actividad
-        binding.tvNombreDetalle.text = nombre
+        binding.tvNombreDetalle.text = nombre ?: ""
         binding.tvPrecioDetalle.text = precio.toString()
-        // Agregar más vistas según sea necesario para otros detalles
-
+        binding.tvInfoDetalle.text= info ?:""
 
         binding.btnAgregar.setOnClickListener {
-            val platillo = Platillo(nombre, precio)
-            platillosViewModel.agregarPlatilloAlPedido(platillo)
-            platillosViewModel.agregarPlatilloAlPedido1(platillo)
+            val pedido = hashMapOf(
+                "Nombre" to nombre,
+                "Total" to precio
+            )
 
-            // Informar al usuario que se agregó el platillo al pedido
-            Toast.makeText(this, "Platillo agregado al pedido", Toast.LENGTH_SHORT).show()
+            db.collection("Pedidos")
+                .add(pedido)
+                .addOnSuccessListener { documentReference ->
+                    val pedidoId = documentReference.id
+                    Toast.makeText(baseContext, "Pedido solicitado correctamente", Toast.LENGTH_SHORT).show()
+
+                    // Guarda el ID en el documento
+                    db.collection("Pedidos").document(pedidoId).update("id", pedidoId)
+                }
+                .addOnFailureListener { e ->
+                    Log.w(ContentValues.TAG, "Error adding document", e)
+                }
         }
 
         binding.btnRegresarAdm.setOnClickListener {
@@ -57,12 +70,10 @@ class DetallePlatilloActivity : AppCompatActivity() {
         }
 
         binding.btnAgregarFavoritos.setOnClickListener {
-            val platillo = Platillo(nombre, precio)
+            val platillo = Platillo(idPlat ?: "",nombre ?: "", precio ?: 0.0, info ?: "")
             platillosViewModel.agregarPlatilloAfavoritos(platillo)
 
-            // Informar al usuario que se agregó el platillo al pedido
             Toast.makeText(this, "Platillo agregado a favoritos", Toast.LENGTH_SHORT).show()
         }
-
     }
 }

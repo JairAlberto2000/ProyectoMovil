@@ -30,8 +30,8 @@ class FavoritosCliente : AppCompatActivity() {
                     // Manejar clic en un platillo: abrir la actividad de detalles
                     platillo?.let {
                         val intent = Intent(this@FavoritosCliente, DetallesFav::class.java)
-                        intent.putExtra("nombrePlatillo", it.nombre)
-                        intent.putExtra("precioPlatillo", it.precio)
+                        intent.putExtra("nombrePlatillo", it.Nombre)
+                        intent.putExtra("precioPlatillo", it.Costo)
                         intent.putExtra("position", position) // Pasar la posición del pedido
 
                         startActivity(intent)

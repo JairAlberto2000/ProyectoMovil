@@ -10,6 +10,24 @@
     tools:context=".HistorialCliente">
 
     <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/almendra_display"
+        android:text="Nombre del Platillo"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/almendra_display"
+        android:text="Precio del Platillo"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

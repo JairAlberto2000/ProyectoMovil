@@ -7,13 +7,12 @@
     android:orientation="vertical"
     tools:context=".ui.agregarMenuAdm.AgregarMenuAdmFragment">
 
-
     <EditText
         android:id="@+id/etNombrePlatillo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/almendra_display"
-        android:hint="Nombre del Platillo"
+        android:hint="Nombre del platillo"
         android:textColorHint="#467733"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
@@ -24,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/almendra_display"
-        android:hint="Precio del Platillo"
+        android:hint="Precio del platillo"
         android:textColorHint="#467733"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="29dp"
@@ -35,46 +34,81 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/almendra_display"
-        android:hint="Información Nutricional"
+        android:hint="Ingredientes principales"
         android:textColorHint="#467733"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="264dp" />
 
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#658f52"
-        android:fontFamily="@font/architects_daughter"
-        android:text="Guardar"
-        android:textColor="#f4dcb6"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="376dp" />
+        android:orientation="horizontal"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/btnCliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#3f7b33"
-        android:fontFamily="@font/architects_daughter"
-        android:text="Ver como cliente"
-        android:textColor="#f4dcb6"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="376dp" />
-    <Button
-        android:id="@+id/btnCerrarSesion2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#3f7b33"
-        android:fontFamily="@font/architects_daughter"
-        android:text="Cerrar sesion adm"
-        android:textColor="#f4dcb6"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="376dp" />
+        <!-- Botones de guardar, consultar y actualizar -->
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#658f52"
+            android:fontFamily="@font/architects_daughter"
+            android:text="Guardar"
+            android:textColor="#f4dcb6"
+            android:textStyle="bold"
+            android:layout_margin="8dp" />
 
+        <Button
+            android:id="@+id/btnConsultar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#658f52"
+            android:fontFamily="@font/architects_daughter"
+            android:text="Consultar"
+            android:textColor="#f4dcb6"
+            android:textStyle="bold"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#658f52"
+            android:fontFamily="@font/architects_daughter"
+            android:text="Actualiza platillo"
+            android:textColor="#f4dcb6"
+            android:textStyle="bold"
+            android:layout_margin="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Botones de ver como cliente y cerrar sesión -->
+        <Button
+            android:id="@+id/btnCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#c73a2c"
+            android:fontFamily="@font/architects_daughter"
+            android:text="Cliente"
+            android:textColor="#f4dcb6"
+            android:textStyle="bold"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/btnCerrarSesion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2a4b78"
+            android:fontFamily="@font/architects_daughter"
+            android:text="Cerrar sesión adm"
+            android:textColor="#f4dcb6"
+            android:textStyle="bold"
+            android:layout_margin="8dp" />
+    </LinearLayout>
 
 </LinearLayout>

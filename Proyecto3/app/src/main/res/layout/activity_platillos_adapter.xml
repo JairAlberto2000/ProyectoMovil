@@ -21,7 +21,18 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvPrecio"
+        android:id="@+id/tvCosto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/almendra_display"
+        android:text="Precio del Platillo"
+        android:textAlignment="center"
+        android:textColor="#658f52"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/almendra_display"
